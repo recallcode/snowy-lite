@@ -1,0 +1,51 @@
+#########################################
+# Involves the configuration of the environment
+#########################################
+
+#########################################
+# redis configuration
+#########################################
+snowy.redis.db: 0
+snowy.redis.server: 127.0.0.1:6379
+snowy.redis.password:
+snowy.redis.timeout: 10s
+
+#########################################
+# sa-token redis configuration
+#########################################
+# sa-token redis configuration
+sa-token.redis.db: ${snowy.redis.db}
+sa-token.redis.server: ${snowy.redis.server}
+sa-token.redis.password: ${snowy.redis.password}
+sa-token.redis.timeout: ${snowy.redis.timeout}
+
+#########################################
+# datasource configuration
+#########################################
+snowy.datasource.dynamic.type: "com.zaxxer.hikari.HikariDataSource"
+snowy.datasource.dynamic.strict: true
+
+# mysql
+snowy.datasource.dynamic.master.driverClassName: com.mysql.cj.jdbc.Driver
+snowy.datasource.dynamic.master.jdbcUrl: jdbc:mysql://localhost:3306/snowy-lite?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true&useInformationSchema=true
+snowy.datasource.dynamic.master.username: root
+snowy.datasource.dynamic.master.password: 123456
+
+# oracle
+#snowy.datasource.dynamic.master.driver-class-name=oracle.jdbc.driver.OracleDriver
+#snowy.datasource.dynamic.master.url=jdbc:oracle:thin:@//127.0.0.1:1521/XE?remarksReporting=true
+#snowy.datasource.dynamic.master.username=SNOWY
+#snowy.datasource.dynamic.master.password=12345678
+
+# dm database
+#snowy.datasource.dynamic.master.driver-class-name=dm.jdbc.driver.DmDriver
+#snowy.datasource.dynamic.master.url=jdbc:dm://localhost:5236/SYSDBA
+#snowy.datasource.dynamic.master.username=SYSDBA
+#snowy.datasource.dynamic.master.password=SYSDBA
+
+# kingbase database
+#snowy.datasource.dynamic.master.driverClassName=com.kingbase8.Driver
+#snowy.datasource.dynamic.master.url=jdbc:kingbase8://localhost:54321/snowy
+#snowy.datasource.dynamic.master.username=SYSTEM
+#snowy.datasource.dynamic.master.password=123456
+#snowy.datasource.dynamic.strict=true
